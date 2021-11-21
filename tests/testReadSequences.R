@@ -18,9 +18,7 @@ testthat::test_that("Maximum accession value is correct", {
   testthat::expect_equal("A.1.2", NewestAccessions(c("A.1.1", "A.1.2")))
   testthat::expect_equal(c("A.1", "B.1"), NewestAccessions(c("A.1", "B.1")))
   testthat::expect_equal("", NewestAccessions(""))
-  
-  # TODO: Implement full dupe check or x[1]
-  #testthat::expect_equal("A|B", NewestAccessions(c("A|B", "A|B")))
+  testthat::expect_equal("A|B", NewestAccessions(c("A|B", "A|B")))
   
   # TODO: Perhaps implement favorite metadata?
   #testthat::expect_equal("A.2|A.3", NewestAccessions(c("A.2|A.3", "A.2|A.4")))

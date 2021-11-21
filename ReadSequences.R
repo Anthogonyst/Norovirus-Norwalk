@@ -51,7 +51,7 @@ NewestAccessions <- function(x) {
   ### Maximizes the value to get the most recent of the dupes
   resolvedConflicts = sapply(dupeVals, function(y) {
     theDupes = which(nums == y)
-    which(x == max(x[theDupes]))
+    which(x == max(x[theDupes]))[1]
   })
   
   ### Combines non-dupes and deduped and returns the array
