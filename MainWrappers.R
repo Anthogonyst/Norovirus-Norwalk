@@ -4,7 +4,8 @@ source(here::here("ReadSequences.R"))
 source(here::here("NorwalkHelpers.R"))
 
 
-NorwalkWrapper <- function() {
+### Creates a multifasta file based on genome completeness from metadata
+ExtractCompleteGenomes <- function() {
   ### Loads the metadata and filters based on a condition
   metadata = here::here("Phages") %>%
     .MostRecentOf(., "Genbank_Norwalk_linelist.+csv") %>%
